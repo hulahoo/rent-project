@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres:14.1-alpine
+    container_name: db
+    restart: unless-stopped
+    volumes:
+      - pg_data:/var/lib/postgresql/data/
+    env_file:
+      - ./.env
+    ports:
+      - 5432:5432
+
+
+  rent_app:
+    build: .
+    restart: unless-stopped
+    volumes:
+      - .:/app/
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./.env
+    depends_on:
+      - db
+
+
+volumes:
+    pg_data:

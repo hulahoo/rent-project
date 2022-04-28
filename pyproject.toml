@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "rental"
+version = "0.1"
+description = "Simple project for rent representation"
+authors = ["hulahoo <biowolf41@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+django = "4.0.3"
+flake8 = "4.0.1"
+gunicorn = "20.0.4"
+psycopg2-binary = "2.8.6"
+django-environ = "0.8.1"
+django-configurations = "2.3.2"
+pytest-django = "4.5.2"
+djangorestframework = "3.13.1"
+mixer = "7.2.2"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
